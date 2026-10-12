@@ -12,7 +12,8 @@ The goal is to create separate JSON files containing customer information and me
 - Load Orders: Reads order information from a JSON file provided as a command-line argument.
 - Customer Information: Extracts customer names and phone numbers from the orders.
 - Duplicate Prevention: Uses a dictionary to ensure each phone number appears only once.
-
+- Menu Item Tracking: Extracts customer names and prices while counting how many times each item has been ordered.
+- JSON File Creation: Saves processed information into separate JSON files using formatted output.
 
 ## Program Design
 
@@ -35,23 +36,33 @@ This function processes the orders and creates a dictionary containing customer 
 - Uses the phone number as the dictionary key and the customer's name as the value.
 - Prevents duplicate phone number entries because dictionary keys must be unique.
 
-### Example Customer Data:
+### 4. create_items(orders)
 
-{
-	"732-555-5509": "Damodhar",
-	"609-555-2301": "Tom"
-}
+This function processes the menu items from each customer order and creates a dictionary containing item information.
+- Iterates through each order and its list of purchased items.
+- Extracts each item's name and price.
+- Creates a dictionary entry for each unique menu item.
+- Initializes the order count to zero for new items.
+- Increments the order count every time an item appears in an order.
 
+### 5. save_json(filename, data)
 
-## Input File
+This function saves processed Python dictionaries into JSON files.
+- Opens or creates a file using write mode ('w').
+- Uses json.dump() to convert Python data into JSON format.
+- Uses indent=4 to make the output easier to read.
+- Automatically closes the file using a with statement.
 
-The program uses example_orders.json, which contains customer orders, including timestamps, customer names, phone numbers, purchased items, prices, and notes.
+The function will be used to generate:
+- customers.json: Stores customer phone numbers and names.
+- items.json: Stores menu item prices and total order counts.
 
 
 ## Planned Features
-- Create an items.json file containing menu item prices and order counts.
-- Save the processed customer information into customers.json
-- Implement the main function to process command-line arguments and execute the program.
+- Implement the main() function to connect all existing functions.
+- Add command-line argument handling to accept different JSON order files.
+- Test the completed program using example_orders.json.
+- Verify that both output JSON files contain the correct information.
 
 
 ## Technologies Used
