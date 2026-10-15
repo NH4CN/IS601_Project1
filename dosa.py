@@ -20,7 +20,7 @@ def create_items(orders):
             item_name = item['name']
             item_price = item['price']
             if item_name not in items:
-                item[item_name] = {
+                items[item_name] = {
                     'price': item_price,
                     'orders': 0
                 }
@@ -30,3 +30,16 @@ def create_items(orders):
 def save_json(filename, data):
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python dosa.py <orders_file.json>")
+        sys.exit(1)
+    orders = load_orders(sys.argv[1])
+    customers = create_customers(orders)
+    items = create_items(orders)
+    save_json('customers.json', customers)
+    save_json('items.json', items)
+
+if __name__ == "__main__":
+    main()

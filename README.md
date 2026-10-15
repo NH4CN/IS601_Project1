@@ -57,12 +57,14 @@ The function will be used to generate:
 - customers.json: Stores customer phone numbers and names.
 - items.json: Stores menu item prices and total order counts.
 
+### 6. main()
 
-## Planned Features
-- Implement the main() function to connect all existing functions.
-- Add command-line argument handling to accept different JSON order files.
-- Test the completed program using example_orders.json.
-- Verify that both output JSON files contain the correct information.
+The main function connects all the previously defined functions and executes the program.
+- Checks that exactly once command-line argument has been provided.
+- Displays a usage message and exits if the filename is missing or extra arguments are supplied.
+- Loads customer orders from the specified JSON file.
+- Creates dictionaries containing customer information and menu item statistics.
+- Saves the processed information into customers.json and items.json.
 
 
 ## Technologies Used
