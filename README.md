@@ -73,5 +73,16 @@ The main function connects all the previously defined functions and executes the
 - Git and GitHub
 - Visual Studio Code
 
+# Dosa Restaurant Final Project
+
+## Final Project Overview
+The final project extends the midterm JSON-processing program by using SQLite for relational data storage and FastAPI to provide a REST API for customers, menu items, and orders. The original midterm program and its documentation above are retained. The "Planned Features" section above describes the midterm's earlier development stage.
+
+## Requirements
+- Python 3.10 or newer
+- fastapi and uvicorn (see requirements.txt)
+- SQLite via Python's built-in sqlite3 module
+
+
 ## Author
 Neelansh Keshari
